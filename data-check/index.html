@@ -37,7 +37,102 @@
         </div>
 
     <script>
-        
+        const dataExplanations = {
+    // Termo: estudo-observacional
+    "estudo-observacional": {
+        title: "O que é um Estudo Observacional?",
+        content: "Este tipo de estudo <strong>encontra conexões</strong> (correlações), mas não pode provar definitivamente que uma coisa <strong>causou</strong> a outra. Os resultados devem ser vistos com cautela.",
+        risk: "Nenhum Risco de Privacidade Direto",
+        action: "Saiba mais sobre Tipos de Pesquisa"
+    },
+
+    // Termo: eficacia-70
+    "eficacia-70": {
+        title: "Entenda a Eficácia de 70%",
+        content: "Isso é uma medida de **Risco Relativo**, significando que o tratamento reduziu o risco de doença em 70% no grupo de teste. Não significa que você tem 30% de chance de pegar a doença.",
+        risk: "Nenhum Risco de Privacidade Direto",
+        action: "Como Entender o Risco Relativo"
+    },
+
+    // Termo: p-value
+    "p-value": {
+        title: "O que é 'p < 0,05'?",
+        content: "Significa que o resultado encontrado é <strong>estatisticamente significante</strong>, ou seja, é muito improvável que tenha sido apenas um acaso. Não significa que o efeito é grande ou clinicamente importante.",
+        risk: "Nenhum Risco de Privacidade Direto",
+        action: "Verificar Relevância Clínica"
+    },
+
+    // Termo: dados-continuos (Integração com Privacidade Utilizável)
+    "dados-continuos": {
+        title: "Alerta de Risco: Dados Contínuos de Saúde",
+        content: "A coleta contínua de localização e sono são dados altamente sensíveis. Podem ser usados por terceiros (ex: seguradoras) para traçar um <strong>perfil detalhado e preditivo</strong> sobre sua saúde.",
+        risk: "Risco de Privacidade: ALTO",
+        action: "Revisar Permissões de Coleta de Dados" // Botão de Ação
+    }
+};
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const terms = document.querySelectorAll('.dca-term');
+    const popup = document.getElementById('data-check-popup');
+
+    terms.forEach(term => {
+        // Evento: Mouse entra no termo (Intervenção Just-in-Time)
+        term.addEventListener('mouseenter', function(e) {
+            const key = this.dataset.info;
+            const info = dataExplanations[key];
+
+            // 1. Preenche o Pop-up (Design de Informação)
+            popup.innerHTML = `
+                <h4>${info.title}</h4>
+                <p>${info.content}</p>
+                <hr style="border-top: 1px solid #eee; margin: 10px 0;">
+                <p>
+                    <strong>Risco de Privacidade:</strong> 
+                    <span class="${info.risk === 'Risco de Privacidade: ALTO' ? 'risk-high' : ''}">
+                        ${info.risk}
+                    </span>
+                </p>
+                <button class="action-btn">${info.action}</button>
+            `;
+            
+            // 2. Posiciona o Pop-up (Usabilidade)
+            // Usamos e.target.getBoundingClientRect() para posicionar o pop-up
+            // *próximo ao termo*, não apenas ao mouse, para maior estabilidade visual.
+            const rect = this.getBoundingClientRect();
+            
+            // Posiciona logo abaixo do termo no artigo
+            popup.style.top = (rect.top + window.scrollY + rect.height + 5) + 'px';
+            
+            // Posiciona à esquerda do termo (ou um pouco à direita se estiver muito perto da margem)
+            let leftPos = rect.left + window.scrollX;
+            if (window.innerWidth - leftPos < 350) { 
+                // Se estiver muito à direita, move para a esquerda do termo
+                leftPos = window.innerWidth - 360; 
+            }
+            popup.style.left = leftPos + 'px';
+
+
+            // 3. Torna visível
+            popup.style.display = 'block';
+        });
+
+        // Evento: Mouse sai do termo
+        term.addEventListener('mouseleave', function() {
+            // Oculta o pop-up
+            popup.style.display = 'none';
+        });
+
+        // Adiciona um listener para manter o pop-up visível se o mouse entrar nele, 
+        // evitando que ele desapareça acidentalmente
+        popup.addEventListener('mouseenter', function() {
+            popup.style.display = 'block';
+        });
+
+        popup.addEventListener('mouseleave', function() {
+            popup.style.display = 'none';
+        });
+    });
+});
     </script>
 </body>
 </html>

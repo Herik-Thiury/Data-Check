@@ -49,3 +49,19 @@ body {
     width: 100%;
     text-align: center;
 }
+
+/* Estilo para destacar o alerta de risco no pop-up */
+.dca-popup .risk-info strong {
+    font-weight: 700;
+}
+
+/* Alerta de Alto Risco */
+.dca-popup .risk-high {
+    color: red;
+    font-weight: bold;
+    border: 1px solid #ffdddd;
+    background-color: #fff0f0;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
