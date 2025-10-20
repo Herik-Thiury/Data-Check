@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+.article-container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estilo para os Termos Interativos (Alfabetização em Dados) */
+.dca-term {
+    /* Destaca o texto para sinalizar a interatividade (IHC: Sinalização) */
+    border-bottom: 2px dashed #007bff; /* Linha pontilhada azul */
+    cursor: help; /* Muda o cursor para indicar que há ajuda/explicação */
+    color: #007bff; /* Cor azul para destaque */
+    font-weight: bold;
+}
+
+/* Estilo para o Pop-up do Data Check */
+.dca-popup {
+    display: none; /* Crucial: Esconde o pop-up inicialmente */
+    position: absolute; /* Permite que o pop-up se mova livremente na tela */
+    background-color: #ffffff;
+    border: 1px solid #007bff;
+    padding: 15px;
+    z-index: 1000; /* Garante que fique acima de todo o conteúdo */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 350px; /* Limita o tamanho para não cobrir muito texto */
+    font-size: 0.9em;
+}
+
+/* Estilo para o botão de ação (Privacidade Utilizável) */
+.action-btn {
+    background-color: #28a745; /* Verde para ação de controle */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
