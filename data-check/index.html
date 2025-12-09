@@ -12,24 +12,36 @@
         <p>Por Dr. IHC Júnior | 15 de Outubro de 2025</p>
         
         <div id="article-content">
-            <p>
-                Em um avanço significativo para a saúde pública, pesquisadores da Universidade de IHC anunciaram os resultados de um ensaio clínico. O estudo, conduzido com base em um 
-                <span class="dca-term" data-info="estudo-observacional">estudo observacional</span>, demonstrou uma 
-                <span class="dca-term" data-info="eficacia-70">eficácia de 70%</span> na prevenção de casos graves.
-            </p>
+    <h3>Resultados Preliminares</h3>
+    <p>
+        Em um avanço significativo para a saúde pública, pesquisadores da Universidade de IHC anunciaram os resultados de um ensaio clínico. O estudo, conduzido com base em um 
+        <span class="dca-term" data-info="estudo-observacional">estudo observacional</span>, demonstrou uma 
+        <span class="dca-term" data-info="eficacia-70">eficácia de 70%</span> na prevenção de casos graves.
+    </p>
 
-            <p>
-                Os resultados foram classificados como 
-                <span class="dca-term" data-info="p-value">estatisticamente significantes (p < 0,05)</span>. 
-                É crucial notar que a análise inicial não incluiu dados de menores de 12 anos.
-            </p>
-            
-            <p>
-                Além disso, a equipe de pesquisa está lançando um aplicativo de rastreamento de sintomas. Este aplicativo irá coletar seus 
-                <span class="dca-term" data-info="dados-continuos">dados contínuos de sono e localização</span>. 
-                Apesar de facilitar o monitoramento da saúde, os termos de privacidade são longos e complexos.
-            </p>
-            </div>
+    <p>
+        Os resultados foram classificados como 
+        <span class="dca-term" data-info="p-value">estatisticamente significantes (p < 0,05)</span>. 
+        É crucial notar que a análise inicial utilizou uma <span class="dca-term" data-info="amostragem">amostragem por conveniência</span>, o que pode não representar toda a população.
+    </p>
+
+    <h3>Metodologia e Controle</h3>
+    <p>
+        Durante a fase de testes, metade dos voluntários recebeu a vacina real, enquanto a outra metade recebeu um 
+        <span class="dca-term" data-info="placebo">placebo</span>. Os cientistas monitoraram cuidadosamente para evitar o 
+        <span class="dca-term" data-info="vies-selecao">viés de seleção</span> na hora de escolher quem entraria em cada grupo.
+    </p>
+    
+    <h3>Tecnologia e Privacidade</h3>
+    <p>
+        Além disso, a equipe de pesquisa está lançando um aplicativo de rastreamento de sintomas. Este aplicativo irá coletar seus 
+        <span class="dca-term" data-info="dados-continuos">dados contínuos de sono e localização</span> para monitorar reações adversas em tempo real.
+    </p>
+
+    <p>
+        A empresa desenvolvedora afirma que utiliza técnicas de <span class="dca-term" data-info="anonimizacao">anonimização de dados</span> antes de enviar as informações para a nuvem. No entanto, especialistas alertam que o cruzamento dessas informações com redes sociais pode permitir a reidentificação do usuário.
+    </p>
+</div>
         
     </div>
 
@@ -68,6 +80,36 @@
         content: "A coleta contínua de localização e sono são dados altamente sensíveis. Podem ser usados por terceiros (ex: seguradoras) para traçar um <strong>perfil detalhado e preditivo</strong> sobre sua saúde.",
         risk: "Risco de Privacidade: ALTO",
         action: "Revisar Permissões de Coleta de Dados" // Botão de Ação
+    },
+    "amostragem": {
+        title: "O que é Amostragem por Conveniência?",
+        content: "Significa que os pesquisadores escolheram participantes que eram <strong>fáceis de encontrar</strong> (ex: estudantes da própria universidade), e não um grupo aleatório. O resultado pode não valer para você.",
+        risk: "Nenhum Risco de Privacidade Direto",
+        action: "Entender Tipos de Amostra"
+    },
+
+    // NOVO: Placebo
+    "placebo": {
+        title: "Definição de Placebo",
+        content: "Uma substância inativa (como pílula de farinha ou soro fisiológico) usada para comparar com o remédio real. Ajuda a provar se o remédio funciona de verdade ou se é psicológico.",
+        risk: "Nenhum Risco de Privacidade Direto",
+        action: "Por que usamos Placebo?"
+    },
+
+    // NOVO: Viés de Seleção
+    "vies-selecao": {
+        title: "Cuidado: Viés de Seleção",
+        content: "Ocorre quando os participantes do estudo não representam o público geral adequadamente. Ex: Testar um remédio para coração apenas em atletas jovens.",
+        risk: "Risco de Interpretação Errada",
+        action: "Ler sobre Vieses Cognitivos"
+    },
+
+    // NOVO: Anonimização (Foco em Privacidade)
+    "anonimizacao": {
+        title: "Alerta: Anonimização vs. Realidade",
+        content: "A empresa diz que remove seu nome dos dados. Porém, 'anonimizar' dados de localização é quase impossível. Onde você dorme e trabalha <strong>identifica você</strong> unicamente.",
+        risk: "Risco de Privacidade: MÉDIO/ALTO",
+        action: "O Mito da Anonimização"
     }
 };
 
